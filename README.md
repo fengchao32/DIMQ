@@ -31,8 +31,8 @@ pytest -q
 Update the ImageNet paths in `dataset1k.py` for your local machine, then run one of the training entry points:
 
 ```bash
-python train_dimq_resnet.py --arch resnet50 --epochs 80
-python train_dimq_vit.py --epochs 80
+python train_dimq_resnet.py --arch resnet18 --epochs 90
+python train_dimq_vit.py --epochs 90
 ```
 
 Training checkpoints and exported artifacts are written under `checkpoints/` by default and are ignored by Git.
