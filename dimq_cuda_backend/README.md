@@ -31,8 +31,8 @@ pip install -e /home/fengchao/DIMQ/dimq_cuda_backend
 
 ```bash
 python scripts/export_resnet18_dimq.py \
-  --compact /home/fengchao/DIMQ/checkpoints/dimq_resnet18_w4_lam5e6_tau01_sep1e2_clr2/best_dimq_compact.pth \
-  --output /home/fengchao/DIMQ/checkpoints/dimq_resnet18_w4_lam5e6_tau01_sep1e2_clr2/best_dimq_packed_w4a4.pt
+  --compact /home/fengchao/DIMQ/checkpoints/dimq_resnet18_w4/best_dimq_compact.pth \
+  --output /home/fengchao/DIMQ/checkpoints/dimq_resnet18_w4/best_dimq_packed_w4a4.pt
 ```
 
 For real accuracy runs, pass calibrated activation qparams:
@@ -44,17 +44,7 @@ python scripts/export_resnet18_dimq.py \
   --activation-qparams activation_qparams.json
 ```
 
-The JSON maps layer names to uniform affine qparams:
 
-```json
-{
-  "layer1.0.conv1": {"scale": 0.03125, "zero_point": 8},
-  "__default__": {"scale": 1.0, "zero_point": 8}
-}
-```
-
-If no JSON is given, the exporter writes an explicit uncalibrated default
-(`scale=1.0`, `zero_point=8`) for smoke testing.
 
 ## Operators
 
