@@ -11,6 +11,13 @@ __pycache__/
 venv/
 env/
 
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.so
+*.o
+
 # Local/editor files
 .DS_Store
 .idea/
